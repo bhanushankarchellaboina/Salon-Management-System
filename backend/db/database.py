@@ -1,17 +1,26 @@
+from dotenv import load_dotenv
+import os
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-db_url = "postgresql://postgres:12345@localhost:5432/beauty_saloon"
-engine = create_engine(db_url)
+load_dotenv()
 
-session = sessionmaker(
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+engine = create_engine(
+    DATABASE_URL,
+    pool_pre_ping=True
+)
+
+SessionLocal = sessionmaker(
+    autocommit=False,
     autoflush=False,
     bind=engine
 )
 
-
 def get_db():
-    db = session()
+    db = SessionLocal()
     try:
         yield db
     finally:
