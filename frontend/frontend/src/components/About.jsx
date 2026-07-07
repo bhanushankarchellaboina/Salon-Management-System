@@ -9,7 +9,7 @@ function About() {
 
                 <div>
 
-                    <h3>👩 Professor</h3>
+                    <h3>👩 Beautician</h3>
                     <p>Suma</p>
 
                     <h3>📞 Phone</h3>
