@@ -68,18 +68,26 @@ function Home() {
 
             <div className="navbar">
 
-                <button
-                    className="theme-btn"
-                    onClick={toggleTheme}
-                >
+                <img
+                    src="/logo.png"
+                    alt="Suma Beauty Salon"
+                    className="logo"
+                />
 
-                    {theme === "dark" ? <FaSun /> : <FaMoon />}
+                <div className="nav-right">
 
-                </button>
+                    <button
+                        className="theme-btn"
+                        onClick={toggleTheme}
+                    >
+                        {theme === "dark" ? <FaSun /> : <FaMoon />}
+                    </button>
 
-                <a href="#about" className="about-link">
-                    About
-                </a>
+                    <a href="#about" className="about-link">
+                        About
+                    </a>
+
+                </div>
 
             </div>
 
