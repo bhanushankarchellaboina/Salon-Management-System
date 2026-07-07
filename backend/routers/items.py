@@ -15,11 +15,8 @@ def get_items(db: Session = Depends(get_db)):
     return db_items
 
 
-
-
 @router.get("/categories", response_model=list[CategoryCard])
 def get_categories(db: Session = Depends(get_db)):
-
     categories = (
         db.query(
             db_models.Item.category,
@@ -42,7 +39,6 @@ def get_categories(db: Session = Depends(get_db)):
 
 @router.get("/category/{category}")
 def get_services_by_category(category: str, db: Session = Depends(get_db)):
-
     services = (
         db.query(db_models.Item)
         .filter(db_models.Item.category == category)
@@ -50,7 +46,6 @@ def get_services_by_category(category: str, db: Session = Depends(get_db)):
     )
 
     return services
-
 
 
 @router.get("/{item_id}")
@@ -90,5 +85,3 @@ def delete_item(item_id=int, db: Session = Depends(get_db)):
         return "product deleted successfully"
     else:
         return "product not found"
-
-
