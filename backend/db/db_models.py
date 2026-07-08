@@ -1,6 +1,6 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Date, DateTime
-from datetime import datetime
+from sqlalchemy import Column, Integer, String
+
 
 Base = declarative_base()
 
@@ -26,8 +26,5 @@ class Product(Base):
     brand = Column(String, nullable=False)
     price = Column(Integer, nullable=False)
     image = Column(String)
-
-
-
 
 

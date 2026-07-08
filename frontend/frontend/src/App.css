@@ -125,8 +125,12 @@ body{
 
     text-align:center;
     color:var(--text);
-    font-size:70px;
+    font-family:'Playfair Display', serif;
+    font-size:72px;
+    font-weight:700;
+    letter-spacing:2px;
     margin-bottom:15px;
+    text-transform:capitalize;
 
 }
 
